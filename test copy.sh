@@ -1,0 +1,1 @@
+echo "ssksksks" >> /Users/maxhager/.oh-my-zsh/custom/plugins/zsh_copilot/log.txt
