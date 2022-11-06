@@ -14,14 +14,16 @@
 
 ## What is it?
 
-This is a ZSH plugin that enables you to use have autocompletion for bash commands. The plugin does not use like other provider OpenAI Codex but instead [Magnus]()
-
-
- OpenAI Codex is the AI that also powers GitHub Copilot.
-To use this plugin you need to get access to OpenAI's [Codex API](https://openai.com/blog/openai-codex/).
-
+This is a ZSH plugin that transforms descriptions of command line tasks to Bash syntax using open-sourced machine translation model that was a winner of a NeurIPS 2020's challenge (https://github.com/magnumresearchgroup/magnum-nlc2cmd). Unlike alternatives, the plugin does not require access to OpenAI Codex, and therefore is completely free. 
 
 ## How do I install it?
+
+First, create conda environment from bash_translator.yml:
+```
+conda env create --file bash_translator.yml
+```
+
+
 ### Manual Installation
 1. Install the OpenAI package.
 ```
@@ -111,8 +113,8 @@ git clone https://github.com/tom-doerr/zsh_codex.git ~/.oh-my-zsh/custom/plugins
 
 1. On keybind "^X" current terminal prompt is parsed into string 
 2. String gets piped into Python file
-3. Model gets string as input and prints bash command with highest likelihood 
-4. Print gets printed in terminal
+3. The model gets a string as input and infers a bash command with highest likelihood as output
+4. The terminal prompt gets replaced with the inferred command
 
 # Steps
 - [ ] install miniconda with 3.9.7 py
